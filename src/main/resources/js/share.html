@@ -1,0 +1,36 @@
+<!-- share.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Vue App</title>
+</head>
+
+<!-- 引入 shared.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+<script src="share.js"></script>
+
+
+<body>
+
+
+<div id="app">
+  <p>{{ share.message }}</p>
+
+  <button @click="reverseMessage">Reverse Message</button>
+</div>
+
+<script>
+  // 创建一个新的 Vue 实例，并将共享的 data 和 method 导入进来
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      share:sharedData,
+      msg:"test"
+    },
+    methods: sharedMethods
+  });
+</script>
+</body>
+</html>
